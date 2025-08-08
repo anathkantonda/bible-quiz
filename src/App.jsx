@@ -30,8 +30,8 @@ function App() {
     {
       index: "four",
       question: "What did David use to defeat Goliath?",
-      options: ["A slingshot", "A sword", "A spear", "His fists"],
-      answer: "A slingshot"
+      options: ["A stone", "A sword", "A spear", "His fists"],
+      answer: "A stone"
     },
     {
       index: "five",
