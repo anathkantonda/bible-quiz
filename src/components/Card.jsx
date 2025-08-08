@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 
 const Card = ({ question, choice, answer, handleClick}) => {
     const [selectedOption, setSelectedOption] = useState(null);
@@ -24,7 +24,6 @@ const Card = ({ question, choice, answer, handleClick}) => {
                         ? 'bg-blue-200 border-blue-500'   // Selected style
                         : 'hover:bg-blue-100 border-gray-300'
                     }`}
-                    disabled={selectedOption !== null} // Disable further clicks
                 >
                     {option}
                 </button>
