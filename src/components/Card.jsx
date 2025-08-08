@@ -1,19 +1,33 @@
 import React from 'react'
 
-const Card = ({ question, choice, answer, handleClick, index, isDisabled }) => {
+const Card = ({ question, choice, answer, handleClick}) => {
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const handleOptionClick = (option) => {
+        if (selectedOption === null) {
+        setSelectedOption(option);  // Track which one was clicked
+        handleClick(option, answer);
+        }
+    };
+
     return (
-        <div className="card p-6 border border-gray-300 rounded shadow-md bg-white mb-4">
-            <h3 className="text-2xl mb-4">{question}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {choice.map((option, i) => (
-                    <button
-                    key={i}
-                    className="bg-blue-200 py-2 px-4 rounded hover:bg-blue-300 disabled:opacity-50"
-                    onClick={() => handleClick(option, answer, index)}
-                    disabled={isDisabled}
-                    >
+        <div className="p-6 bg-white shadow-md rounded-lg max-w-2xl mx-auto">
+            <h3 className="text-xl font-semibold mb-4">{question}</h3>
+            <div className="flex flex-col gap-3">
+                {choice.map((option, index) => (
+                <button
+                    key={index}
+                    onClick={() => handleOptionClick(option)}
+                    className={`py-2 px-4 rounded border text-left 
+                    ${
+                        selectedOption === option
+                        ? 'bg-blue-200 border-blue-500'   // Selected style
+                        : 'hover:bg-blue-100 border-gray-300'
+                    }`}
+                    disabled={selectedOption !== null} // Disable further clicks
+                >
                     {option}
-                    </button>
+                </button>
                 ))}
             </div>
         </div>
