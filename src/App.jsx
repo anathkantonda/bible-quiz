@@ -71,7 +71,7 @@ function App() {
     }
   ];
 
-  const handleClick = (e, answer, index) => {
+  const handleClick = (e, answer) => {
     if(e === answer){
       setScore(prev => prev + 1)
     }
@@ -94,7 +94,7 @@ function App() {
       </div>
 
       <div className="mt-10 mb-10 flex flex-col sm:flex-row items-center justify-around gap-4">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl">Score: {score}</h2>
+        {/* <h2 className="text-2xl sm:text-3xl lg:text-4xl">Score: {score}</h2> */}
         {/* <h2 className="text-2xl sm:text-3xl lg:text-4xl">
           <button onClick={handlePlayAgainClick}>Play Again?</button>
         </h2> */}
