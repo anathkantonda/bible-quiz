@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Nata Sans", sans-serif;
+  font-weight: 800;
+}
+
+.disabled-div {
+  pointer-events: none;
+  opacity: 0.6; /* Optional: visual indication of being disabled */
+}
+
+.no-display {
+  display: none;
+}
