@@ -118,6 +118,7 @@ function App() {
 
           <div className="animate-fade-in transition-opacity duration-500">
             <Card
+              key={currentQuestionIndex}
               question={options[currentQuestionIndex].question}
               choice={options[currentQuestionIndex].options}
               answer={options[currentQuestionIndex].answer}
